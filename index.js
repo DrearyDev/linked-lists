@@ -37,7 +37,25 @@ function linkedList() {
     };
 
     const prepend = (value) => {
+        let nodeInList = node();
+        nodeInList.value = value;
 
+        if (head) { nodeInList.nextNode = head };
+
+        head = nodeInList;
+
+        size++;
+
+        console.log('---------------------');
+        console.log(`Head:`);
+        console.log(head);
+
+        console.log(`Tail:`);
+        console.log(tail);
+
+        console.log(`Size:`);
+        console.log(size);
+        console.log('---------------------');
     };
 
     const at = (index) => {
@@ -76,3 +94,5 @@ let test = linkedList();
 test.append('jhonathan');
 
 test.append('stephanne');
+
+test.prepend('asdfasdfasdf');
