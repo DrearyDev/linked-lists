@@ -1,5 +1,12 @@
 'use strict';
 
+function node() {
+    let value = null;
+    let nextNode = null;
+
+    return { value, nextNode };
+};
+
 function linkedList() {
     let head;
     let tail;
