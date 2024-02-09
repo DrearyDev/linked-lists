@@ -16,7 +16,10 @@ function linkedList() {
         let nodeInList = node();
         nodeInList.value = value;
 
-        if (head === undefined) { head = nodeInList };
+        if (head === undefined) { head = nodeInList }
+        else if (head.nextNode === null){
+            head.nextNode = nodeInList;
+        };
 
         if (tail) { tail.nextNode = nodeInList };
 
@@ -99,10 +102,11 @@ function linkedList() {
 
 let test = linkedList();
 
+test.prepend('asdfasdfasdf');
+
 test.append('jhonathan');
 
 test.append('stephanne');
 
-test.prepend('asdfasdfasdf');
 
 console.log(test.at(2));// should be stephanne if 0 indexed
