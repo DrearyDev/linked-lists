@@ -59,7 +59,15 @@ function linkedList() {
     };
 
     const at = (index) => {
+        let current = head;
 
+        let i = 0;
+        while (i !== index) {
+            current = current.nextNode;
+            i++;
+        };
+
+        return current;
     };
 
     const pop = () => {
@@ -96,3 +104,5 @@ test.append('jhonathan');
 test.append('stephanne');
 
 test.prepend('asdfasdfasdf');
+
+console.log(test.at(2));// should be stephanne if 0 indexed
