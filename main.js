@@ -6,6 +6,9 @@ const input = document.querySelector('#list');
 const submitListBtn = document.querySelector('#list-btn');
 const stringOutput = document.querySelector('.output .string');
 
+const interactionDiv = document.querySelector('.interaction');
+interactionDiv.style.display = 'none';
+
 let linked;
 
 function createLinkedList(listarr) {
@@ -14,6 +17,8 @@ function createLinkedList(listarr) {
     for (let i in listarr) {
         linked.append(listarr[i]);
     };
+
+    interactionDiv.style.display = 'block';
 
     return linked.toString();
 };
