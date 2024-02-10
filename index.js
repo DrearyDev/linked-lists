@@ -173,3 +173,5 @@ function linkedList() {
 
     return { head, tail, size, append, prepend, at, pop, contains, find, toString, insertAt, removeAt };
 };
+
+export { linkedList };
