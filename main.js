@@ -45,3 +45,14 @@ submitListBtn.addEventListener('click', (e) => {
     stringOutput.innerText = createLinkedList(listArr);
     input.value = '';
 });
+
+selectMethod.addEventListener('input', (e) => {
+
+    if (selectMethod.value === 'toString' || selectMethod.value === 'pop') {
+        methodUserInput.disabled = 'true';
+        methodUserInput.style.border = '1px solid #999';
+    } else {
+        methodUserInput.disabled = 'false';
+        methodUserInput.style.border = '1px solid black';
+    };
+});
