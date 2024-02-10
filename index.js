@@ -135,7 +135,20 @@ function linkedList() {
     };
 
     const toString = () => {
+        let string = `(${head.value}) -> `;
 
+        let current = head.nextNode;
+        let i = 0;
+
+        while (i < size-1) {
+            string += `(${current.value}) -> `;
+            current = current.nextNode;
+            i++;
+        };
+
+        string += `null`
+
+        return string;
     };
 
     const insertAt = (value, index) => {
@@ -155,6 +168,10 @@ test.prepend('asdfasdfasdf');
 
 test.append('jhonathan');
 
+test.append('cats');
+
+test.append('fzfzfzfzfzfz');
+
 test.append('stephanne');
 
 
@@ -169,3 +186,7 @@ console.log(test.contains('jhonathan'));
 console.log('-----------------');
 console.log('the index of jhonathan is: (zero indexed list)');
 console.log(test.find('jhonathan'));
+
+console.log('--------------------------------------');
+console.log('the list visualized:');
+console.log(test.toString());
