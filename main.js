@@ -21,6 +21,7 @@ function createLinkedList(listarr) {
 function validateList(inputValue) {
     inputValue = inputValue.replace(/ /g, '');// remove all spaces
     inputValue = inputValue.replace(/,,/g, '');// remove two commas in a row
+    inputValue = inputValue.replace(/,$/g, '');// remove trailing comma
 
     return inputValue.split(',');
 };
