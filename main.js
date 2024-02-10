@@ -4,6 +4,7 @@ console.log(linkedList());
 
 const input = document.querySelector('#list');
 const submitListBtn = document.querySelector('#list-btn');
+const stringOutput = document.querySelector('.output .string');
 
 let linked;
 
@@ -14,7 +15,7 @@ function createLinkedList(listarr) {
         linked.append(listarr[i]);
     };
 
-    console.log(linked.toString());
+    return linked.toString();
 };
 
 function validateList(inputValue) {
@@ -28,6 +29,6 @@ submitListBtn.addEventListener('click', (e) => {
     e.preventDefault();
 
     let listArr = validateList(input.value);
-    createLinkedList(listArr);
+    stringOutput.innerText = createLinkedList(listArr);
     input.value = '';
 });
