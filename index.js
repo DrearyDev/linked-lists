@@ -152,23 +152,20 @@ function linkedList() {
     };
 
     const insertAt = (value, index) => {
+        if (index > size || index < 0) { throw 'index is out of bounds' };
+
         let nodeInList = node();
         nodeInList.value = value;
 
         let current = head;
         let i = 0;
 
-        if (index < 1) {//if index is less than one, will just prepend value
-            nodeInList.nextNode = current;
+        if (index === 0) {
+            nodeInList.nextNode = current
             head = nodeInList;
         } else {
             while (i < (index - 1)) {
-                if (current.nextNode !== null) {
-                    current = current.nextNode;
-                } else {//if index is out of bounds, will just append value
-                    current = tail;
-                };
-
+                current = current.nextNode;
                 i++;
             };
 
