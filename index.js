@@ -62,6 +62,8 @@ function linkedList() {
     };
 
     const at = (index) => {
+        if (index > size || index < 0) { throw 'index is out of bounds' };
+
         let current = head;
 
         let i = 0;
