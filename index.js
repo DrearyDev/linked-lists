@@ -177,21 +177,27 @@ function linkedList() {
     };
 
     const removeAt = (index) => {
+        if (index > (size-1) || index < 0) { throw 'index is out of bounds' };
+
         let current = head;
         let i = 0;
-        let before;
+        let before = head;
 
-        while (i < index) {
-            current = current.nextNode;
+        if (index === 0) {
+            head = head.nextNode;
+        } else {
+            while (i < index) {
+                current = current.nextNode;
 
-            if (i === (index-2)) {
-                before = current;
+                if (i === (index-2)) {
+                    before = current;
+                };
+
+                i++;
             };
 
-            i++;
+            before.nextNode = current.nextNode;
         };
-
-        before.nextNode = current.nextNode;
 
         size--;
     };
