@@ -152,7 +152,31 @@ function linkedList() {
     };
 
     const insertAt = (value, index) => {
+        let nodeInList = node();
+        nodeInList.value = value;
 
+        let current = head;
+        let i = 0;
+
+        if (index < 1) {//if index is less than one, will just prepend value
+            nodeInList.nextNode = current;
+            head = nodeInList;
+        } else {
+            while (i < (index - 1)) {
+                if (current.nextNode !== null) {
+                    current = current.nextNode;
+                } else {//if index is out of bounds, will just append value
+                    current = tail;
+                };
+
+                i++;
+            };
+
+            nodeInList.nextNode = current.nextNode;
+            current.nextNode = nodeInList;
+        };
+
+        size++;
     };
 
     const removeAt = (index) => {
@@ -189,4 +213,9 @@ console.log(test.find('jhonathan'));
 
 console.log('--------------------------------------');
 console.log('the list visualized:');
+console.log(test.toString());
+
+console.log('--------------------------------------');
+console.log('insert (meowmeowmeow) at index 1:');
+test.insertAt('meowmeowmeow', 1);
 console.log(test.toString());
