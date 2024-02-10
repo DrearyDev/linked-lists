@@ -9,6 +9,13 @@ const stringOutput = document.querySelector('.output .string');
 const interactionDiv = document.querySelector('.interaction');
 interactionDiv.classList.add('hidden');
 
+const selectMethod = document.querySelector('#method');
+selectMethod.value = 'toString';
+
+const methodUserInput = document.querySelector('#method-user-input');
+methodUserInput.disabled = 'true';
+methodUserInput.style.border = '1px solid #999';
+
 let linked;
 
 function createLinkedList(listarr) {
