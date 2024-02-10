@@ -74,7 +74,32 @@ function linkedList() {
     };
 
     const pop = () => {
+        let current = head;
 
+        //subtract 1 since its 0-indexed and another since we want the one right before the tail
+        let index = size - 2;
+
+        for (let i = 0; i < index; i++) {
+            current = current.nextNode;
+        };
+
+        console.log(current);
+
+        current.nextNode = null;
+        tail = current;
+
+        size--;
+
+        console.log('-------------------------------');
+        console.log(`Head:`);
+        console.log(head);
+
+        console.log(`Tail:`);
+        console.log(tail);
+
+        console.log(`Size:`);
+        console.log(size);
+        console.log('-------------------------------');
     };
 
     const contains = (value) => {
@@ -109,4 +134,7 @@ test.append('jhonathan');
 test.append('stephanne');
 
 
-console.log(test.at(2));// should be stephanne if 0 indexed
+console.log('at index 2 in the 0-indexed list:');
+console.log(test.at(2));
+
+test.pop();
