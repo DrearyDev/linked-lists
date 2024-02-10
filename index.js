@@ -180,7 +180,23 @@ function linkedList() {
     };
 
     const removeAt = (index) => {
+        let current = head;
+        let i = 0;
+        let before;
 
+        while (i < index) {
+            current = current.nextNode;
+
+            if (i === (index-2)) {
+                before = current;
+            };
+
+            i++;
+        };
+
+        before.nextNode = current.nextNode;
+
+        size--;
     };
 
     return { head, tail, size, append, prepend, at, pop, contains, find, toString, insertAt, removeAt };
@@ -218,4 +234,9 @@ console.log(test.toString());
 console.log('--------------------------------------');
 console.log('insert (meowmeowmeow) at index 1:');
 test.insertAt('meowmeowmeow', 1);
+console.log(test.toString());
+
+console.log('--------------------------------------');
+console.log('remove (jhonathan) at index 2:');
+test.removeAt(2);
 console.log(test.toString());
