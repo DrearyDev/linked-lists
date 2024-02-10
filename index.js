@@ -120,6 +120,18 @@ function linkedList() {
 
     const find = (value) => {
 
+        let current = head;
+        let index = 0;
+
+        while (index < size) {
+            if (current.value === value) { return index }
+            else {
+                current = current.nextNode;
+                index++;
+            };
+        };
+
+        return null;
     };
 
     const toString = () => {
@@ -153,3 +165,7 @@ test.pop();
 
 console.log('the linked list contains jhonathan:');
 console.log(test.contains('jhonathan'));
+
+console.log('-----------------');
+console.log('the index of jhonathan is: (zero indexed list)');
+console.log(test.find('jhonathan'));
