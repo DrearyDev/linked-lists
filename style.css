@@ -14,12 +14,14 @@ body {
 }
 
 input,
-button {
+button,
+select {
     padding: 10px;
     border: 1px solid black;
 }
 
 .input,
-.output {
+.output,
+.interaction {
     padding: 10px;
 }
