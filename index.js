@@ -26,17 +26,6 @@ function linkedList() {
         tail = nodeInList;
 
         size++;
-
-        console.log('-------------');
-        console.log(`Head:`);
-        console.log(head);
-
-        console.log(`Tail:`);
-        console.log(tail);
-
-        console.log(`Size:`);
-        console.log(size);
-        console.log('-------------');
     };
 
     const prepend = (value) => {
@@ -48,17 +37,6 @@ function linkedList() {
         head = nodeInList;
 
         size++;
-
-        console.log('---------------------');
-        console.log(`Head:`);
-        console.log(head);
-
-        console.log(`Tail:`);
-        console.log(tail);
-
-        console.log(`Size:`);
-        console.log(size);
-        console.log('---------------------');
     };
 
     const at = (index) => {
@@ -91,17 +69,6 @@ function linkedList() {
         tail = current;
 
         size--;
-
-        console.log('-------------------------------');
-        console.log(`Head:`);
-        console.log(head);
-
-        console.log(`Tail:`);
-        console.log(tail);
-
-        console.log(`Size:`);
-        console.log(size);
-        console.log('-------------------------------');
     };
 
     const contains = (value) => {
@@ -206,42 +173,3 @@ function linkedList() {
 
     return { head, tail, size, append, prepend, at, pop, contains, find, toString, insertAt, removeAt };
 };
-
-let test = linkedList();
-
-test.prepend('asdfasdfasdf');
-
-test.append('jhonathan');
-
-test.append('cats');
-
-test.append('fzfzfzfzfzfz');
-
-test.append('stephanne');
-
-
-console.log('at index 2 in the 0-indexed list:');
-console.log(test.at(2));
-
-test.pop();
-
-console.log('the linked list contains jhonathan:');
-console.log(test.contains('jhonathan'));
-
-console.log('-----------------');
-console.log('the index of jhonathan is: (zero indexed list)');
-console.log(test.find('jhonathan'));
-
-console.log('--------------------------------------');
-console.log('the list visualized:');
-console.log(test.toString());
-
-console.log('--------------------------------------');
-console.log('insert (meowmeowmeow) at index 1:');
-test.insertAt('meowmeowmeow', 1);
-console.log(test.toString());
-
-console.log('--------------------------------------');
-console.log('remove (jhonathan) at index 2:');
-test.removeAt(2);
-console.log(test.toString());
