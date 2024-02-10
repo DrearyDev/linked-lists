@@ -7,7 +7,7 @@ const submitListBtn = document.querySelector('#list-btn');
 const stringOutput = document.querySelector('.output .string');
 
 const interactionDiv = document.querySelector('.interaction');
-interactionDiv.style.display = 'none';
+interactionDiv.classList.add('hidden');
 
 let linked;
 
@@ -18,7 +18,7 @@ function createLinkedList(listarr) {
         linked.append(listarr[i]);
     };
 
-    interactionDiv.style.display = 'block';
+    interactionDiv.classList.remove('hidden');
 
     return linked.toString();
 };
