@@ -63,8 +63,6 @@ function linkedList() {
             current = current.nextNode;
         };
 
-        console.log(current);
-
         current.nextNode = null;
         tail = current;
 
