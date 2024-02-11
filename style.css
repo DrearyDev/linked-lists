@@ -57,6 +57,11 @@ select {
     gap: 10px;
 }
 
+.interaction form .error-msg {
+    position: absolute;
+    top: -20px;
+}
+
 .interaction button {
     width: 100%;
 }
