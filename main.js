@@ -142,6 +142,7 @@ submitListBtn.addEventListener('click', (e) => {
 });
 
 selectMethod.addEventListener('input', (e) => {
+    info.innerText = '';
     methodUserInput.placeholder = placeholders[selectMethod.value];
 
     if (selectMethod.value === 'pop') {
