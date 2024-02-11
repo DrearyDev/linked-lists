@@ -11,7 +11,7 @@ const interactionDiv = document.querySelector('.interaction');
 interactionDiv.classList.add('hidden');
 
 const selectMethod = document.querySelector('#method');
-selectMethod.value = 'toString';
+selectMethod.value = 'pop';
 
 const methodUserInput = document.querySelector('#method-user-input');
 methodUserInput.value = '';
@@ -56,9 +56,9 @@ submitListBtn.addEventListener('click', (e) => {
 
 selectMethod.addEventListener('input', (e) => {
 
-    if (selectMethod.value === 'toString' || selectMethod.value === 'pop') {
+    if (selectMethod.value === 'pop') {
         methodUserInput.value = '';
-        methodUserInput.disabled = 'true';
+        methodUserInput.disabled = true;
         methodUserInput.style.border = '1px solid #999';
     } else {
         methodUserInput.disabled = false;
