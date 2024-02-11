@@ -3,6 +3,7 @@ import { linkedList } from "./linkedList.js";
 console.log(linkedList());
 
 const input = document.querySelector('#list');
+input.value = '';
 const submitListBtn = document.querySelector('#list-btn');
 const stringOutput = document.querySelector('.output .string');
 
@@ -13,8 +14,11 @@ const selectMethod = document.querySelector('#method');
 selectMethod.value = 'toString';
 
 const methodUserInput = document.querySelector('#method-user-input');
-methodUserInput.disabled = 'true';
+methodUserInput.value = '';
+methodUserInput.disabled = true;
 methodUserInput.style.border = '1px solid #999';
+
+const methodSubmitBtn = document.querySelector('#method-user-input-btn');
 
 let linked;
 
@@ -49,10 +53,18 @@ submitListBtn.addEventListener('click', (e) => {
 selectMethod.addEventListener('input', (e) => {
 
     if (selectMethod.value === 'toString' || selectMethod.value === 'pop') {
+        methodUserInput.value = '';
         methodUserInput.disabled = 'true';
         methodUserInput.style.border = '1px solid #999';
     } else {
-        methodUserInput.disabled = 'false';
+        methodUserInput.disabled = false;
         methodUserInput.style.border = '1px solid black';
     };
+});
+
+methodSubmitBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    console.log(selectMethod.value);
+    console.log(methodUserInput.value);
 });
