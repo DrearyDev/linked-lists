@@ -27,18 +27,22 @@
 
         <div class="interaction">
             <form action="">
-                <select name="method" id="method">
-                    <option value="pop">pop()</option>
-                    <option value="append">append(value)</option>
-                    <option value="prepend">prepend(value)</option>
-                    <option value="at">at(index)</option>
-                    <option value="contains">contains(value)</option>
-                    <option value="find">find(value)</option>
-                </select>
-
                 <span class="info"></span>
 
-                <input placeholder="" type="text" name="method-user-input" id="method-user-input">
+                <div>
+                    <select name="method" id="method">
+                        <option value="pop">pop()</option>
+                        <option value="append">append(value)</option>
+                        <option value="prepend">prepend(value)</option>
+                        <option value="at">at(index)</option>
+                        <option value="contains">contains(value)</option>
+                        <option value="find">find(value)</option>
+                        <option value="insertAt">insertAt(value, index)</option>
+                        <option value="removeAt">removeAt(index)</option>
+                    </select>
+                    <input placeholder="" type="text" name="method-user-input" id="method-user-input">
+                </div>
+
 
                 <button id="method-user-input-btn">Submit</button>
             </form>
