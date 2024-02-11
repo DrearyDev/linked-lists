@@ -12,6 +12,10 @@ function linkedList() {
     let tail;
     let size = 0;
 
+    const getSize = () => {
+        return size;
+    };
+
     const append = (value) => {
         let nodeInList = node();
         nodeInList.value = value;
@@ -169,7 +173,7 @@ function linkedList() {
         size--;
     };
 
-    return { head, tail, size, append, prepend, at, pop, contains, find, toString, insertAt, removeAt };
+    return { head, tail, getSize, append, prepend, at, pop, contains, find, toString, insertAt, removeAt };
 };
 
 export { linkedList };
