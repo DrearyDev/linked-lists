@@ -18,6 +18,8 @@ methodUserInput.value = '';
 methodUserInput.disabled = true;
 methodUserInput.style.border = '1px solid #999';
 
+const info = document.querySelector('.info');
+
 const methodSubmitBtn = document.querySelector('#method-user-input-btn');
 
 let linked;
@@ -35,7 +37,35 @@ function createLinkedList(listarr) {
 };
 
 function validateMethodInput(method, input) {
-    console.log(method, input);
+    //alternative to switch statement
+    let options = {
+        at: function(input) {
+            input = Number(input);
+
+            if (input < 0 || input > linked.getSize() - 1) {
+                methodUserInput.setCustomValidity('Index is out of bounds');
+                info.innerText = methodUserInput.validationMessage;
+                methodUserInput.style.border = '1px solid red';
+            } else {
+                methodUserInput.setCustomValidity('');
+                methodUserInput.style.border = '1px solid black';
+
+                info.innerText = linked.at(input).value;
+            };
+        },
+        contains: function(input) {
+            info.innerText = linked.contains(input);
+        },
+        find: function(input) {
+            if (linked.find(input) === null) { info.innerText = 'not found' }
+            else { info.innerText = `found at index: ${linked.find(input)}` };
+        }
+    }[method] ?? function(input) {
+        linked[method](input);
+        stringOutput.innerText = linked.toString();
+    };
+
+    options(input);
 };
 
 function validateList(inputValue) {
