@@ -24,6 +24,17 @@ const methodSubmitBtn = document.querySelector('#method-user-input-btn');
 
 let linked;
 
+let placeholders = {
+    pop: '',
+    append: 'value',
+    prepend: 'value',
+    at: 'index',
+    contains: 'value',
+    find: 'value',
+    insertAt: 'value,index',
+    removeAt: 'index'
+};
+
 function createLinkedList(listarr) {
     linked = linkedList();
 
@@ -131,6 +142,7 @@ submitListBtn.addEventListener('click', (e) => {
 });
 
 selectMethod.addEventListener('input', (e) => {
+    methodUserInput.placeholder = placeholders[selectMethod.value];
 
     if (selectMethod.value === 'pop') {
         methodUserInput.value = '';
