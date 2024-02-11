@@ -34,6 +34,10 @@ function createLinkedList(listarr) {
     return linked.toString();
 };
 
+function validateMethodInput(method, input) {
+    console.log(method, input);
+};
+
 function validateList(inputValue) {
     inputValue = inputValue.replace(/ /g, '');// remove all spaces
     inputValue = inputValue.replace(/,,/g, '');// remove two commas in a row
@@ -65,6 +69,5 @@ selectMethod.addEventListener('input', (e) => {
 methodSubmitBtn.addEventListener('click', (e) => {
     e.preventDefault();
 
-    console.log(selectMethod.value);
-    console.log(methodUserInput.value);
+    validateMethodInput(selectMethod.value, methodUserInput.value);
 });
